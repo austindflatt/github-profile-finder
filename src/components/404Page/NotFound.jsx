@@ -6,4 +6,4 @@ function NotFound() {
   )
 }
 
-export default 404
+export default NotFound
