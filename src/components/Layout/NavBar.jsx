@@ -9,7 +9,6 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -70,13 +69,8 @@ function NavBar({title}) {
                     }}
                     >
                         <MenuItem key={null} onClick={handleCloseNavMenu}>
-                            <Typography
-                            component={Link}
-                            to={'/'}
-                            textAlign="center"
-                            >
-                                About
-                            </Typography>
+                            <Typography component={Link} to={'/'} textAlign="center">Home</Typography>
+                            <Typography component={Link} to={'/about'} textAlign="center">About</Typography>
                         </MenuItem>
                     </Menu>
                 </Box>
@@ -89,15 +83,8 @@ function NavBar({title}) {
                     <GitHubIcon />
                 </Typography>
                 <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                    <Button
-                    component={Link}
-                    to={'/'}
-                    key={null}
-                    onClick={null}
-                    sx={{ my: 2, color: 'white', display: 'block' }}
-                    >
-                        Home
-                    </Button>
+                    <Button component={Link} to={'/'} key={null} onClick={null} sx={{ my: 2, color: 'white', display: 'block' }}>Home</Button>
+                    <Button component={Link} to={'/about'} key={null} onClick={null} sx={{ my: 2, color: 'white', display: 'block' }}>About</Button>
                 </Box>
             </Toolbar>
         </Container>

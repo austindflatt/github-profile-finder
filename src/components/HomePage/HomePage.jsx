@@ -4,7 +4,6 @@ import UserResults from '../Users/UserResults'
 function HomePage() {
   return (
     <>
-      HomePage
       <UserResults />
     </>
   )
