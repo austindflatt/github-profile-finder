@@ -12,6 +12,7 @@ function App() {
     <Router>
       <NavBar />
       <CssBaseline />
+      <Box m={2} pt={3}>
       <Container maxWidth="xl">
         <Routes>
           <Route path='/' element={<HomePage />} />
@@ -20,6 +21,7 @@ function App() {
           <Route path='/*' element={<NotFound />} />
         </Routes>
       </Container>
+      </Box>
     </Router>
   );
 }
