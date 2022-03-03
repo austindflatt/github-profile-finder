@@ -6,10 +6,21 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import NavBar from './components/Layout/NavBar'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#1976d2',
+    },
+  },
+});
 
 function App() {
   return (
     <Router>
+      <ThemeProvider theme={darkTheme}>
       <NavBar />
       <CssBaseline />
       <Box m={2} pt={3}>
@@ -22,6 +33,7 @@ function App() {
         </Routes>
       </Container>
       </Box>
+      </ThemeProvider>
     </Router>
   );
 }
