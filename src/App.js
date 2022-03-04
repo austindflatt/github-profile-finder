@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import HomePage from './components/HomePage/HomePage'
 import AboutPage from './components/AboutPage/AboutPage'
 import NotFound from './components/404Page/NotFound'
+import { GithubProvider } from './context/github/GithubContext'
 import CssBaseline from '@mui/material/CssBaseline'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
@@ -19,6 +20,7 @@ const darkTheme = createTheme({
 
 function App() {
   return (
+    <GithubProvider>
     <Router>
       <ThemeProvider theme={darkTheme}>
       <NavBar />
@@ -35,6 +37,7 @@ function App() {
       </Box>
       </ThemeProvider>
     </Router>
+    </GithubProvider>
   );
 }
 
