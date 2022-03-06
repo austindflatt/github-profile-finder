@@ -23,7 +23,7 @@ function UserResults() {
       </Grid>
     )
   } else {
-    return <Box sx={{ display: 'flex' }}>
+    return <Box sx={{ display: 'flex' }} style={{width: '100px', margin: 'auto', display: 'block'}}>
       <CircularProgress />
       </Box>
   }
