@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import HomePage from './components/HomePage/HomePage'
 import AboutPage from './components/AboutPage/AboutPage'
 import NotFound from './components/404Page/NotFound'
+import { AlertMessage } from './components/Layout/Alert'
 import { GithubProvider } from './context/github/GithubContext'
 import { AlertProvider } from './context/alert/AlertContext'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -29,6 +30,7 @@ function App() {
       <CssBaseline />
       <Box m={2} pt={3}>
       <Container maxWidth="xl">
+      <AlertMessage />
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/about' element={<AboutPage />} />

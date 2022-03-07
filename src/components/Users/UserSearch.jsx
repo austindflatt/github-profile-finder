@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import Alert from '@mui/material/Alert';
 
 const UserSearch = () => {
   const [text, setText] = useState('')
@@ -24,9 +23,6 @@ const UserSearch = () => {
 	event.preventDefault()
 
 	if(text === '') {
-		// <Stack sx={{ width: '100%' }} spacing={2}>
-		// 	<Alert severity="warning">Error, you must enter a username</Alert>
-		// </Stack>
 		setAlert('Please enter a username', 'error')
 	} else {
 		searchUsers(text)
