@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import UserItem from './UserItem'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
@@ -7,10 +7,6 @@ import GithubContext from '../../context/github/GithubContext'
 
 function UserResults() {
   const { users, loading, fetchUsers } = useContext(GithubContext)
-
-  useEffect(() => {
-    // fetchUsers()
-  }, [])
 
   if(!loading) {
     return (
