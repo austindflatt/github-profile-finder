@@ -3,6 +3,7 @@ import HomePage from './components/HomePage/HomePage'
 import AboutPage from './components/AboutPage/AboutPage'
 import NotFound from './components/404Page/NotFound'
 import { GithubProvider } from './context/github/GithubContext'
+import { AlertProvider } from './context/alert/AlertContext'
 import CssBaseline from '@mui/material/CssBaseline'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
@@ -21,6 +22,7 @@ const darkTheme = createTheme({
 function App() {
   return (
     <GithubProvider>
+    <AlertProvider>
     <Router>
       <ThemeProvider theme={darkTheme}>
       <NavBar />
@@ -37,6 +39,7 @@ function App() {
       </Box>
       </ThemeProvider>
     </Router>
+    </AlertProvider>
     </GithubProvider>
   );
 }

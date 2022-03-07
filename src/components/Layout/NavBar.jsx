@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,8 +12,6 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-const pages = ['Home', 'About'];
 
 function NavBar({title}) {
 
