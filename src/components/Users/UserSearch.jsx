@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import GithubContext from '../../context/github/GithubContext';
+import AlertContext from '../../context/alert/AlertContext';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
@@ -10,6 +11,8 @@ const UserSearch = () => {
   const [text, setText] = useState('')
 
   const { users, searchUsers, clearUsers } = useContext(GithubContext)
+
+  const { setAlert } = useContext(AlertContext)
   
   const handleChange = (event) => setText(event.target.value)
 
@@ -24,7 +27,7 @@ const UserSearch = () => {
 		// <Stack sx={{ width: '100%' }} spacing={2}>
 		// 	<Alert severity="warning">Error, you must enter a username</Alert>
 		// </Stack>
-		alert('Please enter a username')
+		setAlert('Please enter a username', 'error')
 	} else {
 		searchUsers(text)
 		setText('')
