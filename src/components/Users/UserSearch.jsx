@@ -8,9 +8,13 @@ import Button from '@mui/material/Button';
 const UserSearch = () => {
   const [text, setText] = useState('')
 
-  const { users } = useContext(GithubContext)
+  const { users, searchUsers, clearUsers } = useContext(GithubContext)
   
   const handleChange = (event) => setText(event.target.value)
+
+  const handleClear = () => {
+	  clearUsers()
+  }
 
   const handleSubmit = (event) => {
 	event.preventDefault()
@@ -18,7 +22,7 @@ const UserSearch = () => {
 	if(text === '') {
 		alert('Please enter a username')
 	} else {
-		// search for users
+		searchUsers(text)
 		setText('')
 	}
   }
@@ -42,7 +46,7 @@ const UserSearch = () => {
 	/>
 	</form>
 	{users.length > 0 && (
-		<Button variant="outlined" color="warning">Clear</Button>
+		<Button variant="outlined" color="warning" onClick={handleClear}>Clear</Button>
 	)}
 	</Stack>
   </Box>
