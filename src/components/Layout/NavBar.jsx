@@ -66,10 +66,8 @@ function NavBar({title}) {
                         display: { xs: 'block', md: 'none' },
                     }}
                     >
-                        <MenuItem key={null} onClick={handleCloseNavMenu}>
-                            <Typography component={Link} to={'/'} textAlign="center">Home</Typography>
-                            <Typography component={Link} to={'/about'} textAlign="center">About</Typography>
-                        </MenuItem>
+                        <MenuItem component={Link} to={'/'}>Home</MenuItem>
+                        <MenuItem component={Link} to={'/about'}>About</MenuItem>
                     </Menu>
                 </Box>
                 <Typography
@@ -81,8 +79,8 @@ function NavBar({title}) {
                     <GitHubIcon />
                 </Typography>
                 <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                    <Button component={Link} to={'/'} key={null} onClick={null} sx={{ my: 2, color: 'white', display: 'block' }}>Home</Button>
-                    <Button component={Link} to={'/about'} key={null} onClick={null} sx={{ my: 2, color: 'white', display: 'block' }}>About</Button>
+                    <Button component={Link} to={'/'} sx={{ my: 2, color: 'white', display: 'block' }}>Home</Button>
+                    <Button component={Link} to={'/about'} sx={{ my: 2, color: 'white', display: 'block' }}>About</Button>
                 </Box>
             </Toolbar>
         </Container>
