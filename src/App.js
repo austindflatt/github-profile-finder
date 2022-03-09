@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import HomePage from './components/HomePage/HomePage'
+import User from './components/UserPage/User'
 import AboutPage from './components/AboutPage/AboutPage'
 import NotFound from './components/404Page/NotFound'
 import { AlertMessage } from './components/Layout/Alert'
@@ -34,6 +35,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/about' element={<AboutPage />} />
+          <Route path='/user/:login' element={<User />} />
           <Route path='/404' element={<NotFound />} />
           <Route path='/*' element={<NotFound />} />
         </Routes>

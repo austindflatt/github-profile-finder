@@ -23,7 +23,7 @@ function UserItem({ user: { login, avatar_url } }) {
 		/>
 		{login}
 		<Link
-		to={`/users/${login}`}
+		to={`/user/${login}`}
 		>
 			Visit Profile
 		</Link>
