@@ -59,7 +59,7 @@ const User = () => {
 	  <>
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2} columns={16}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} lg={4}>
 
         <Avatar
           alt={login}
