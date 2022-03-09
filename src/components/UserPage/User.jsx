@@ -177,7 +177,7 @@ const User = () => {
         <br />
         <h1>Latest Repositories</h1>
 
-        <RepoList />
+        <RepoList repos={repos} />
         
         <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
           <ListItem alignItems="flex-start">
