@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import GithubContext from '../../context/github/GithubContext'
+import RepoList from '../Repos/RepoList'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 import CircularProgress from '@mui/material/CircularProgress'
@@ -18,22 +19,23 @@ import LocationOnIcon from '@mui/icons-material/LocationOn'
 import LanguageIcon from '@mui/icons-material/Language'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import InsertLinkIcon from '@mui/icons-material/InsertLink'
-import Divider from '@mui/material/Divider'
-import Typography from '@mui/material/Typography'
-
 import VisibilityIcon from '@mui/icons-material/Visibility'
 import StarIcon from '@mui/icons-material/Star'
 import InfoIcon from '@mui/icons-material/Info'
 import RestaurantIcon from '@mui/icons-material/Restaurant'
 import AssessmentIcon from '@mui/icons-material/Assessment'
+import Divider from '@mui/material/Divider'
+import Typography from '@mui/material/Typography'
+
 
 const User = () => {
-  const { getUser, user, loading } = useContext(GithubContext)
+  const { getUser, user, loading, getRepos, repos } = useContext(GithubContext)
 
   const params = useParams()
 
   useEffect(() => {
-	getUser(params.login)
+	  getUser(params.login)
+    getRepos(params.login)
   }, [])
 
   const {
@@ -174,6 +176,8 @@ const User = () => {
         </Stack>
         <br />
         <h1>Latest Repositories</h1>
+
+        <RepoList />
         
         <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
           <ListItem alignItems="flex-start">
