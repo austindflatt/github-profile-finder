@@ -7,7 +7,7 @@ function AboutPage() {
   return (
     <>
     <h1>GitHub Profile Finder</h1>
-    <p>GitHub Profile Finder is a React app that allows users to search GitHub profiles and see profile details.</p>
+    <p>GitHub Profile Finder is a web application that allows users to search GitHub profiles and see profile details.</p>
     <p>This web application was built by Austin Flatt, using React.js, Material UI, and the GitHub API.</p>
     < br/>
     <Stack spacing={2} direction="row">
