@@ -18,14 +18,7 @@ import CorporateFareIcon from '@mui/icons-material/CorporateFare'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import LanguageIcon from '@mui/icons-material/Language'
 import TwitterIcon from '@mui/icons-material/Twitter'
-import InsertLinkIcon from '@mui/icons-material/InsertLink'
-import VisibilityIcon from '@mui/icons-material/Visibility'
-import StarIcon from '@mui/icons-material/Star'
-import InfoIcon from '@mui/icons-material/Info'
-import RestaurantIcon from '@mui/icons-material/Restaurant'
 import AssessmentIcon from '@mui/icons-material/Assessment'
-import Divider from '@mui/material/Divider'
-import Typography from '@mui/material/Typography'
 
 
 const User = () => {
@@ -178,37 +171,6 @@ const User = () => {
         <h1>Latest Repositories</h1>
 
         <RepoList repos={repos} />
-        
-        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-          <ListItem alignItems="flex-start">
-            <ListItemAvatar>
-              <InsertLinkIcon />
-            </ListItemAvatar>
-            <ListItemText
-              primary="Repo link and name"
-              secondary={
-                <React.Fragment>
-                  <Typography
-                    sx={{ display: 'inline' }}
-                    component="span"
-                    variant="body2"
-                    color="text.primary"
-                  >
-                    <br />
-                    <Stack direction="row" spacing={1}>
-                      <Chip icon={<VisibilityIcon />} label="20" color='primary' variant="outlined" />
-                      <Chip icon={<StarIcon />} label="134" color='success' variant="outlined" />
-                      <Chip icon={<InfoIcon />} label="1" color='error' variant="outlined" />
-                      <Chip icon={<RestaurantIcon />} label="20" color='warning' variant="outlined" />
-                    </Stack>
-                  </Typography>
-                </React.Fragment>
-                }
-              />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-        </List>
-
 
         </Grid>
 
