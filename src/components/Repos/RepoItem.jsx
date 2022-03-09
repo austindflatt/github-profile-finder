@@ -14,6 +14,16 @@ import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
 
 const RepoItem = ({ repo }) => {
+  const {
+    full_name,
+    html_url,
+    description,
+    forks_count,
+    open_issues,
+    watchers_count,
+    stargazers_count,
+    language,
+  } = repo;
   return (
 	<>
   <ListItem alignItems="flex-start">
