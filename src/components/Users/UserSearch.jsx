@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import GithubContext from '../../context/github/GithubContext';
 import AlertContext from '../../context/alert/AlertContext';
+import { searchUsers } from '../../context/github/GithubActions';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
@@ -9,23 +10,24 @@ import Button from '@mui/material/Button';
 const UserSearch = () => {
   const [text, setText] = useState('')
 
-  const { users, searchUsers, clearUsers } = useContext(GithubContext)
+  const { users, dispatch } = useContext(GithubContext)
 
   const { setAlert } = useContext(AlertContext)
   
   const handleChange = (event) => setText(event.target.value)
 
-  const handleClear = () => {
-	  clearUsers()
-  }
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
 	event.preventDefault()
 
 	if(text === '') {
 		setAlert('Please enter a username', 'error')
 	} else {
-		searchUsers(text)
+		dispatch({ type: 'SET_LOADING' })
+		const users = await searchUsers(text)
+		dispatch({
+			type: 'GET_USERS',
+			payload: users,
+		})
 		setText('')
 	}
   }
@@ -49,7 +51,7 @@ const UserSearch = () => {
 	/>
 	</form>
 	{users.length > 0 && (
-		<Button variant="outlined" color="warning" onClick={handleClear}>Clear</Button>
+		<Button variant="outlined" color="warning" onClick={() => dispatch({ type: 'CLEAR_USERS' })}>Clear</Button>
 	)}
 	</Stack>
   </Box>
