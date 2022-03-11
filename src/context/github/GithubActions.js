@@ -1,40 +1,31 @@
-const GITHUB_URL = `https://api.github.com`;
+import axios from 'axios'
+
+// Create an instance of axios
+const instance = axios.create({
+  baseURL: 'https://api.github.com',
+
+})
 
 // Get inital users
 export const searchUsers = async (text) => {
   const params = new URLSearchParams({
 	q: text,
   })
-  const response = await fetch(`${GITHUB_URL}/search/users?${params}`);
-  const { items } = await response.json();
-  
-  return items
+
+  const response = await instance.get(`/search/users?${params}`)
+  return response.data.items
 }
 
-// Get single user
-export const getUser = async (login) => {
-  
-  const response = await fetch(`${GITHUB_URL}/users/${login}`);
+// Get user and repos
+export const getUserAndRepos = async (login) => {
+  // Takes in an array of requests
+  const [user, repos] = await Promise.all([
+    instance.get(`/users/${login}`),
+    instance.get(`/users/${login}/repos`)
+  ])
 
-  if(response.status === 404){
-	window.location = '/404'
-  } else {
-	const data = await response.json();
-	
-	return data
+  return {
+    user: user.data,
+    repos: repos.data,
   }
-}
-
-// Get user repos
-export const getRepos = async (login) => {
-
-  const params = new URLSearchParams({
-	sort: 'created',
-	per_page: 10,
-  })
-
-  const response = await fetch(`${GITHUB_URL}/users/${login}/repos?${params}`);
-  const data = await response.json();
-
-  return data
 }
