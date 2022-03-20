@@ -27,7 +27,7 @@ function NavBar({title}) {
 
   return (
     <AppBar position="static" color="primary">
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
             <Toolbar disableGutters>
                 <Typography
                 variant="h6"

@@ -30,7 +30,7 @@ function App() {
       <NavBar />
       <CssBaseline />
       <Box m={2} pt={3}>
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
       <AlertMessage />
         <Routes>
           <Route path='/' element={<HomePage />} />
